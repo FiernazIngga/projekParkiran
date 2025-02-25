@@ -17,25 +17,45 @@ void eksekusiKendaraan(int tipeKendaraan, string plat, string waktuMasuk){
     {
         kendaraanMobil[jumlahRodaEmpat].type = "Kendaraan Beroda Empat";
         kendaraanMobil[jumlahRodaEmpat].plat = plat;
-        kendaraanMobil[jumlahRodaEmpat].parkirMotor[jumlahRodaEmpat].harga = 3000;
-        kendaraanMobil[jumlahRodaEmpat].parkirMotor[jumlahRodaEmpat].denda = 0;
-        kendaraanMobil[jumlahRodaEmpat].parkirMotor[jumlahRodaDua].waktuKeluar = "Kendaraan Masih Didalam";
+        kendaraanMobil[jumlahRodaEmpat].parkirMobil[jumlahRodaEmpat].harga = 3000;
+        kendaraanMobil[jumlahRodaEmpat].parkirMobil[jumlahRodaEmpat].denda = 0;
+        kendaraanMobil[jumlahRodaEmpat].parkirMobil[jumlahRodaEmpat].waktuKeluar = "Kendaraan Masih Didalam";
         jumlahRodaEmpat++;
     }
 }
 
-void cetakKendaraan() {
-    for (int i = 0; i < jumlahRodaDua; i++)
+void cetakKendaraanMotor(int rodaDua) {
+    if (jumlahRodaDua == 0)
     {
-        cout << kendaraanMotor[i].type << endl;
-        cout << kendaraanMotor[i].plat << endl;
-        cout << kendaraanMotor[i].parkirMotor[i].harga << endl;
-        cout << kendaraanMotor[i].parkirMotor[i].denda << endl;
-        cout << kendaraanMotor[i].parkirMotor[i].waktuKeluar << endl;
+        cout << "Belum ada kendaraan beroda dua" << endl;
+    } else if (rodaDua < jumlahRodaDua)
+    {
+        cout << kendaraanMotor[rodaDua].type << endl;
+        cout << kendaraanMotor[rodaDua].plat << endl;
+        cout << kendaraanMotor[rodaDua].parkirMotor[rodaDua].harga << endl;
+        cout << kendaraanMotor[rodaDua].parkirMotor[rodaDua].denda << endl;
+        cout << kendaraanMotor[rodaDua].parkirMotor[rodaDua].waktuKeluar << endl;
         cout << endl;
         cout << endl;
-    }
-    system("pause");
+        cetakKendaraanMotor(rodaDua+1);
+    } 
+}
+
+void cetakKendaraanMobil(int rodaEmpat){
+    if (jumlahRodaEmpat == 0)
+    {
+        cout << "Belum ada kendaraan beroda empat" << endl;
+    } else if (rodaEmpat < jumlahRodaEmpat)
+    {
+        cout << kendaraanMobil[rodaEmpat].type << endl;
+        cout << kendaraanMobil[rodaEmpat].plat << endl;
+        cout << kendaraanMobil[rodaEmpat].parkirMobil[rodaEmpat].harga << endl;
+        cout << kendaraanMobil[rodaEmpat].parkirMobil[rodaEmpat].denda << endl;
+        cout << kendaraanMobil[rodaEmpat].parkirMobil[rodaEmpat].waktuKeluar << endl;
+        cout << endl;
+        cout << endl;
+        cetakKendaraanMobil(rodaEmpat+1);
+    } 
 }
 
 void kendaraanMasuk(){
@@ -82,4 +102,32 @@ void kendaraanMasuk(){
         }
     }
     
+}
+
+void cekKendaraan(){
+    int pilihanCek;
+    system("cls");
+    cout << "Pilih menu dibawah ini untuk melihat kendaraan" << endl;
+    cout << "1. Cek Semua Kendaraan" << endl;
+    cout << "2. Cek Berdasarkan Plat Kendaraan" << endl;
+    cout << "3. Cek Berdasarkan Waktu Masuk Kendaraan" << endl;
+    cout << "Masukkan pilihan (1/2/3) : "; cin >> pilihanCek;
+    cin.ignore();
+    switch (pilihanCek)
+    {
+    case 1:
+        system("cls");
+        if (jumlahRodaDua == 0 && jumlahRodaEmpat == 0)
+        {
+            cout << "Belum ada kendaraan terpakir" << endl;
+        } else {
+            cetakKendaraanMotor(0);
+            cetakKendaraanMobil(0);
+        }
+        system("pause");
+        break;
+    
+    default:
+        break;
+    }
 }

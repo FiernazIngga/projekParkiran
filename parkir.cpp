@@ -17,7 +17,7 @@ int main(){
             ulangMenu = 1;
             break;
         case 2:
-            cetakKendaraan();
+            cekKendaraan();
             ulangMenu = 1;
             break;
         case 3:
@@ -25,7 +25,6 @@ int main(){
             ulangMenu = 1;
             break;
         case 4:
-            /* code */
             ulangMenu = 0;
             break;
         

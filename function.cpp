@@ -1,5 +1,9 @@
 #include "struct.cpp"
 
+void sleep(int detik){
+    this_thread::sleep_for(chrono::seconds(detik));
+}
+
 void eksekusiKendaraan(int tipeKendaraan, string plat, string waktuMasuk){
     if (tipeKendaraan == 1)
     {
@@ -41,7 +45,7 @@ void kendaraanMasuk(){
     while (ulangTipeKendaraan)
     {
         system("cls");
-        cout << "Pilih Tipe Kendaraan Masukkan Dengan Angka (1/2/3) \n1. Kendaraan Roda Dua\n2. Kendaraan Roda Empat \n3. Roda Empat Keatas\4. Kembali Ke Menu Utama\nMasukkan Tipe Kendaraan : ";
+        cout << "Pilih Tipe Kendaraan Masukkan Dengan Angka (1/2/3) \n1. Kendaraan Roda Dua\n2. Kendaraan Roda Empat \n3. Roda Empat Keatas\n4. Kembali Ke Menu Utama\nMasukkan Tipe Kendaraan : ";
         cin >> tipeKendaraan;
         cin.ignore();
         switch (tipeKendaraan)

@@ -1,5 +1,7 @@
 #include <iostream>
-#include <unistd.h> 
+#include <string>
+#include <thread>
+#include <chrono>
 using namespace std;
 
 const int maxLahanRodaDua = 20;

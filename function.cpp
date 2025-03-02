@@ -117,13 +117,8 @@ void cekKendaraan(){
     {
     case 1:
         system("cls");
-        if (jumlahRodaDua == 0 && jumlahRodaEmpat == 0)
-        {
-            cout << "Belum ada kendaraan terpakir" << endl;
-        } else {
-            cetakKendaraanMotor(0);
-            cetakKendaraanMobil(0);
-        }
+        cetakKendaraanMotor(0);
+        cetakKendaraanMobil(0);
         system("pause");
         break;
     

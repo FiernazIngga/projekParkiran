@@ -160,7 +160,7 @@ void cariKendaraanPlat(int cariPlatRoda){
             cout << "Plat Kendaraan         : " << kendaraanMotor[i].plat << endl;
             cout << "Biaya Parkir           : " << kendaraanMotor[i].parkirMotor[i].harga << endl;
             cout << "Denda Parkir           : " << kendaraanMotor[i].parkirMotor[i].denda << endl;
-            cout << "Waktu Masuk Kendaraan  : " << kendaraanMotor[i].parkirMotor[i].waktuMasuk << endl;
+            cout << "Waktu Masuk Kendaraan  : "; kendaraanMotor[i].parkirMotor[i].lihatWaktu();
             cout << "Waktu Keluar Kendaraan : " << kendaraanMotor[i].parkirMotor[i].waktuKeluar << endl;
         } else {
             cout << "Kendaraan dengan plat "<< platDiCari <<" tidak ditemukan" << endl;
